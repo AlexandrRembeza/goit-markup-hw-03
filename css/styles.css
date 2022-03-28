@@ -12,6 +12,8 @@
   --footer-color: #2f303a;
   --team-color: #f5f4fa;
   --help-color: tomato;
+
+  --project-list-margin: 30px;
 }
 
 body {
@@ -195,7 +197,6 @@ section.hero {
 
 /*section our-works*/
 .our-works {
-  padding-top: 0;
   padding-bottom: 94px;
 }
 .our-works h2 {
@@ -316,18 +317,28 @@ section.projects {
   color: var(--special-color);
   background-color: var(--accent-color);
 }
+.project-list img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 .project-list {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+
+  padding: 0;
+  margin: 0;
+  margin-left: calc(-1 * var(--project-list-margin));
+  margin-top: calc(-1 * var(--project-list-margin));
 }
 .project-list li {
-  width: calc((100% - 60px) / 3);
-  margin-bottom: 30px;
+  flex-basis: calc(100% / 3 - var(--project-list-margin));
+  margin-left: var(--project-list-margin);
+  margin-top: var(--project-list-margin);
 }
-.project-list li:nth-last-child(-n + 3) {
+/*.project-list li:nth-last-child(-n + 3) {
   margin-bottom: 0;
-}
+}*/
 .project-list .list-item {
   background: #ffffff;
   border-right: 1px solid #eeeeee;
@@ -351,9 +362,6 @@ section.projects {
   line-height: 1.87;
   margin-top: 0;
   margin-bottom: 0;
-}
-.project-list img {
-  display: block;
 }
 
 /*container*/
